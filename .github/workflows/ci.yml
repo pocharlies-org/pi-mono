@@ -12,6 +12,8 @@ concurrency:
 
 jobs:
   build-check-test:
+    # INFRA-1218: job del upstream earendil-works/pi; queda skipped en el fork
+    if: github.repository == 'earendil-works/pi'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

@@ -16,6 +16,8 @@ permissions:
 
 jobs:
   build:
+    # INFRA-1218: job del upstream earendil-works/pi; queda skipped en el fork
+    if: github.repository == 'earendil-works/pi'
     runs-on: ubuntu-latest
     env:
       RELEASE_TAG: ${{ github.event.inputs.tag || github.ref_name }}
